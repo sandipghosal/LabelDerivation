@@ -1,0 +1,25 @@
+package label_derivation;
+
+public class ReadProgram {
+	
+	public String findTarget(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		return expression[0];
+	}
+	
+	public String[] findOperands(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		String operands[]=expression[1].split("[/+-;()]"); //[!%&()*+/;<=>^|~-]
+		return operands;
+	}
+	
+	public static void main(String[] args) {
+		ReadProgram rp =new ReadProgram();
+		System.out.println(rp.findTarget("a=b+c"));
+		for(String op:rp.findOperands("a=b+(c-10);"))
+			System.out.println(op);
+		
+	}
+}

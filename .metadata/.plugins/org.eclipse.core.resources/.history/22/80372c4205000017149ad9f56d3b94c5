@@ -1,0 +1,24 @@
+package label_derivation;
+
+public class ReadProgram {
+	
+	public String findTarget(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		return expression[0];
+	}
+	
+	public String[] findOperands(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		//String operands[]=expression[1].split("[%*/+-;]",-1); //[%*/+-^|;()\b]
+		String temp=expression[1].replaceAll("[^0-9,a-z,A-Z]", " ");
+		String operands[]=temp.split(" ");
+		return operands;
+	}
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

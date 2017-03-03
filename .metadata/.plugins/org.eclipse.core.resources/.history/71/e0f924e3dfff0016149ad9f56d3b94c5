@@ -1,0 +1,21 @@
+package label_derivation;
+
+import java.util.ArrayList;
+
+public class ReadProgram {
+	
+	public String findTarget(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		return expression[0];
+	}
+	
+	public ArrayList<String> findOperands(String statement)
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

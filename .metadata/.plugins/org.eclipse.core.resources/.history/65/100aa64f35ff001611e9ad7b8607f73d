@@ -1,0 +1,9 @@
+package label_derivation;
+
+public class ReadProgram {
+	
+	
+	public static void main(String[] args) {
+		System.out.println("Hello");
+	}
+}

@@ -1,0 +1,11 @@
+package label_derivation;
+
+import java.util.ArrayList;
+
+public class LabelGenerator {
+	
+	public Label labelForAssignment(String target, ArrayList<String> expression_operands)
+	{
+		
+	}
+}

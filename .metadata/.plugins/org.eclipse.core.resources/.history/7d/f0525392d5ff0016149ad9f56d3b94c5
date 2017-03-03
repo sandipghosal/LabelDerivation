@@ -1,0 +1,11 @@
+package label_derivation;
+
+import java.util.ArrayList;
+
+public class ConstraintGenerator {
+
+	public void constraintForAssignment(char target, ArrayList<Character> expression_operands)
+	{
+		
+	}
+}
