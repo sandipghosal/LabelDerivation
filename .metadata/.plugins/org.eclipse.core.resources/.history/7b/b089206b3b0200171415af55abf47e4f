@@ -1,0 +1,85 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Test {
+	
+	
+
+	public static void main(String[] args) {
+		Set<String> target=new HashSet<String>();
+		target.add("D");
+		target.add("B");
+		Set<String> source=new HashSet<String>();
+		source.add("A");
+		source.add("C");
+		//target.addAll(source);
+		target.retainAll(source);
+		System.out.println(target.retainAll(source));
+
+				
+	}
+	
+	public void createLabel()
+	{
+		String a="a=(A,{*},{ })";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[{}()]");
+		
+		String owner;
+		ArrayList<String> readers=new ArrayList<String>();
+		ArrayList<String> writers=new ArrayList<String>();
+		
+		for(String st:temp)
+			System.out.println(st);
+	
+		owner=temp[1].substring(0, temp[1].indexOf(','));
+		System.out.println("Owner="+owner);
+		
+		char reader_set[]=temp[2].toCharArray();
+		String reader="";
+		for(char ch: reader_set)
+		{
+			int flag=0;
+			if(ch!=',')
+			{
+				reader=reader+ch;
+			}
+			else
+				flag=1;
+			
+			if(flag==1)
+			{
+				System.out.println("Reader="+reader);
+				readers.add(reader);
+				reader="";
+			}
+		}
+		System.out.println("Reader="+reader);
+		readers.add(reader);
+		
+		char writer_set[]=temp[4].toCharArray();
+		String writer="";
+		for(char ch: writer_set)
+		{
+			int flag=0;
+			if(ch!=',')
+			{
+				writer=writer+ch;
+			}
+			else
+				flag=1;
+			
+			if(flag==1)
+			{
+				System.out.println("Reader="+writer);
+				writers.add(writer);
+				writer="";
+			}
+		}
+		System.out.println("Writer="+writer);
+		writers.add(writer);
+	}
+}

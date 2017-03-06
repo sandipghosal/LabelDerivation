@@ -1,0 +1,54 @@
+package label_derivation;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ReadProgram {
+
+	
+	public static void main(String[] args) {
+		
+		ReadProgram main_program=new ReadProgram();
+		RWFMOperations rwfm = new RWFMOperations();
+		LabelGenerator label_generator = new LabelGenerator();
+		
+		Map<String,Label> static_labels = new HashMap<String,Label>();
+		Map<String,Label> dynamic_labels = new HashMap<String,Label>();
+		
+		try{
+			FileInputStream fstream=new FileInputStream(args[0]);
+			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+			String line;
+			while((line=br.readLine())!=null)
+			{
+				String tokens[]=line.split("\\=");
+				static_labels.put(tokens[0], rwfm.createLabel(tokens[1]));
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+			try{
+				FileInputStream fstream=new FileInputStream(args[0]);
+				BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+				String line;
+			
+				while((line=br.readLine())!=null)
+				{
+					
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+			}
+		
+	}
+		
+}

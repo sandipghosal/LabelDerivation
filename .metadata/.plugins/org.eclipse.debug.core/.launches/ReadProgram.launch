@@ -7,5 +7,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="label_derivation.ReadProgram"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="/home/sandip/Dropbox/github/labels&#10;/home/sandip/Dropbox/github/test.java"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="label_derivation"/>
 </launchConfiguration>

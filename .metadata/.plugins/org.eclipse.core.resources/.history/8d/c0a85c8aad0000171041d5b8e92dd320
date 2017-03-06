@@ -1,0 +1,43 @@
+package test;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String a="a=(A,{A,B},{C})";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[{}()]");
+		
+		String owner;
+		ArrayList<String> readers=new ArrayList<String>();
+		ArrayList<String> writers=new ArrayList<String>();
+		
+		for(String st:temp)
+			System.out.println(st);
+	
+		owner=temp[1].substring(0, 1);
+		System.out.println("Owner="+owner);
+		
+		char array[]=temp[2].toCharArray();
+		String reader="";
+		for(char ch: array)
+		{
+			int flag=0;
+			if(ch!=',' && ch!='\0')
+			{
+				reader=reader+ch;
+			}
+			else
+				flag=1;
+			
+			if(flag==1)
+			{
+				System.out.println("Reader="+reader);
+				readers.add(reader);
+				reader="";
+			}
+		}
+				
+	}
+}

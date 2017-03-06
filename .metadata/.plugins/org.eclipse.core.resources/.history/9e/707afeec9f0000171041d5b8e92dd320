@@ -1,0 +1,14 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String a="a=(A,{A,B},{C})";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[,()]");
+		
+		for(String st:temp)
+			System.out.println(st);
+		
+	}
+}

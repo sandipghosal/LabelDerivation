@@ -1,5 +1,6 @@
 package label_derivation;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ public class Label {
 	private Set<String> readers=new HashSet<String>();
 	private Set<String> writers=new HashSet<String>();
 	
-	public Label(String owner, String readers[], String writers[]) {
+	public Label(String owner, ArrayList<String> readers, ArrayList<String> writers) {
 		this.owner=owner;
 		this.setReaders(readers);
 		this.setWriters(writers);
@@ -28,7 +29,8 @@ public class Label {
 		return readers;
 	}
 	
-	public void setReaders(String readers[]) {
+	public void setReaders(ArrayList<String> readers) {
+		this.readers.clear();
 		for(String reader:readers)
 			this.readers.add(reader);
 	}
@@ -37,28 +39,23 @@ public class Label {
 		return writers;
 	}
 	
-	public void setWriters(String writers[]) {
+	public void setWriters(ArrayList<String> writers) {
 		for(String writer:writers)
 			this.writers.add(writer);
 	}
 	
-	/*public void clearReaders()
+	public boolean isEqual(Label label)
 	{
-		this.readers.clear();
+		if(this.owner.equals(label.owner))
+		{
+			if(this.readers.equals(label.readers))
+			{
+				if(this.writers.equals(label.writers))
+					return true;
+			}
+		}
+		
+		return false;
 	}
-	
-	public void clearWriters() {
-		this.writers.clear();
-	}
-	
-	public void intersectionReaders(Label label)
-	{
-		this.readers.retainAll(label.getReaders());
-	}
-	
-	public void unionWriters(Label label)
-	{
-		this.writers.addAll(label.getWriters());
-	}*/
 	
 }

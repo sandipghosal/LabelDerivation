@@ -1,0 +1,13 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String a="a=(A,{A,B},{C})";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[{}]");
+		System.out.println(temp[0].substring(temp[0].indexOf('(')+1, temp[0].indexOf(',')));
+		for(String st:temp)
+			System.out.println(st);
+	}
+}

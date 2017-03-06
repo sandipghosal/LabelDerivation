@@ -1,0 +1,25 @@
+package test;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String a="a=(A,{A,B},{C})";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[,()]");
+		
+		String owner=temp[0];
+		ArrayList<String> readers=new ArrayList<String>();
+		
+		
+		for(String st:temp)
+			System.out.println(st);
+		
+		if(temp[1].contains("{"))
+		{
+			readers.add(temp[1].substring(1));
+		}
+		System.out.println(readers);
+	}
+}

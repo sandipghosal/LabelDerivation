@@ -1,0 +1,31 @@
+package test;
+
+import java.util.ArrayList;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String a="a=(A,{A,B},{C})";
+		String parts[]=a.split("\\=");
+		String temp[]=parts[1].split("[{}()]");
+		
+		String owner;
+		ArrayList<String> readers=new ArrayList<String>();
+		ArrayList<String> writers=new ArrayList<String>();
+		
+		for(String st:temp)
+			System.out.println(st);
+		
+		for(String st:temp)
+		{
+			if(!st.contains("{"))
+			{
+				owner=st;
+			}
+			else
+			{
+				
+			}
+		}
+	}
+}

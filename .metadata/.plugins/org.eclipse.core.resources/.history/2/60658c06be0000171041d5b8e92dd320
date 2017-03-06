@@ -1,0 +1,57 @@
+package label_derivation;
+
+import java.util.Map;
+
+public class LabelGenerator {
+	
+	public boolean isInteger(String string)
+	{
+		try{
+			Integer.parseInt(string)
+		}
+		catch (NumberFormatException e) {
+			return false;
+		}
+		catch (NullPointerException e) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+	public String findTarget(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		return expression[0];
+	}
+	
+	public String[] findOperands(String statement)
+	{
+		String expression[]=statement.split("\\=");
+		String temp=expression[1].replaceAll("[^0-9,a-z,A-Z]", " ");
+		String operands[]=temp.split(" ");
+		return operands;
+	}
+	
+	public Label labelForAssignment(String statement, Map<String,Label> static_labels, Map<String,Label> dynamic_labels)
+	{
+		String target=findTarget(statement);
+		String operands[]=findOperands(statement);
+		
+		for(String str:operands)
+		{
+			if(!str.isEmpty())
+			{
+				if(isInteger(str))
+				{
+					
+				}
+				else
+				{
+					
+				}
+			}
+		}
+		return null;
+	}
+}
